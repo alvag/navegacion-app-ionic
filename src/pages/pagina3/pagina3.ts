@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavParams } from 'ionic-angular';
+
 
 @Component( {
     selector: 'page-pagina3',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
 } )
 export class Pagina3Page {
 
-    constructor() {
+    mutante: any = {};
+
+    constructor( private navParams: NavParams ) {
+        this.mutante = this.navParams.get( 'mutante' );
+        console.log( this.mutante );
     }
 
 }

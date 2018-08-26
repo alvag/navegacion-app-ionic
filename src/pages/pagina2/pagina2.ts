@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Pagina3Page } from '../pagina3/pagina3';
 
 @Component( {
     selector: 'page-pagina2',
@@ -7,11 +8,30 @@ import { NavController, NavParams } from 'ionic-angular';
 } )
 export class Pagina2Page {
 
+    pagina3: any = Pagina3Page;
+    mutantes: any[] = [
+        {
+            nombre: 'Magneto',
+            poder: 'Controlar metales'
+        },
+        {
+            nombre: 'Wolverine',
+            poder: 'Regeneración acelerada'
+        },
+        {
+            nombre: 'Profesor X',
+            poder: 'Poderes psiquicos'
+        },
+        {
+            nombre: 'Gambito',
+            poder: 'Cargar objetos inanimados con energía'
+        }
+    ];
+
     constructor( public navCtrl: NavController, public navParams: NavParams ) {
     }
 
-    ionViewDidLoad() {
-        console.log( 'ionViewDidLoad Pagina2Page' );
+    irPagina3( mutante: any ) {
+        this.navCtrl.push( Pagina3Page, { mutante } );
     }
-
 }
